@@ -1,4 +1,4 @@
-# Discordace Between Reported Gallstone Diagnosis and Gallbladder Surgery
+# Discordace Between Self-Reported Gallstone Diagnosis and Gallbladder Surgery: Analysis of NHANES 2017-2023
 ## Team: 
 - Nicole Tesla Kreimer
 - Erna Jiraskova
@@ -22,14 +22,9 @@ Discordant (Surgery + NO Gallstones):   509 (26.3%)
 * Predictors: Demographics (age, sex, race/ethnicity), socioeconomic/access factors (education, family income-to-poverty ratio, health insurance, routine healthcare access), and clinical/metabolic measures (BMI, waist circumference, diabetes, time since surgery, and laboratory lipids/glucose where sample coverage permits).
 
 ## Research question:  
-*Remove? Among adults reporting previous gallbladder surgery, which demographic, metabolic, clinical and socioeconomic characteristics distinguish those with and without a reported history of gallstones?*
-- In US adults reporting gallbladder surgery in NHANES (2017–2023), do demographic, clinical, metabolic, and socioeconomic characteristics modeled via survey-weighted multivariable logistic regression and gradient boosting predict discordant non-reporting of gallstones better than a survey-weighted age-and-sex-only baseline?  
+Among adults reporting previous gallbladder surgery, which demographic, metabolic, clinical and socioeconomic characteristics distinguish those with and without a reported history of gallstones?*
 
 ## Literature background:
-*Remove? Paper X (same data): NHANES 2017–2020 study of metabolic dysfunction-associated steatotic liver disease (MASLD) and gallstones ([PMC11704231](https://pmc.ncbi.nlm.nih.gov/articles/PMC11704231/))  
-what they did: analyzed NHANES 2017-2020 using the self-report gallstone questionnaire and propensity score matching.
-what they found: gallstones were more prevalent with MASLD with higher odds after matching.
-what they left open: treated self-reported gallstones strictly as the outcome and did not examine individuals who reported gallbladder surgery yet answered "no" to gallstones.*
 
 ### Paper 1, same data: 
 **NHANES 2017–March 2020 study of the triglyceride-glucose (TyG) index, gallstones, and age at first gallstone surgery** ([PMC11271289](https://pmc.ncbi.nlm.nih.gov/articles/PMC11271289/))  
@@ -43,7 +38,7 @@ what they left open: treated self-reported gallstones strictly as the outcome an
 * What they found: agreement was about 99% for cholecystectomy but only about 67% for gallstone disease, so surgery is reported reliably and gallstones less so.
 * What they left open: this was a side check in a hormone therapy study, not an analysis of who gives discordant answers. Supporting: a Scottish study found about 99.6% agreement between self-reported cholecystectomy and hospital records.
 
-**The gap our project fills:** Prior NHANES studies treat self-reported gallstone diagnosis and gallbladder surgery as aligned proxies for gallstone disease. Our project directly characterizes the discordant sub-population (gallbladder surgery without reported gallstones, representing 26.3% of surgical cases) across 2017-2023.   
+**The gap our project fills:** Prior studies treat self-reported gallstone diagnosis and gallbladder surgery as aligned proxies for gallstone disease. Our project directly characterizes the discordant sub-population (gallbladder surgery without reported gallstones, representing 26.3% of surgical cases) and whether there is a difference from those with a history of gallstones, across 2017-2023.   
   
 ## Approach:
 ### Descriptive Analysis: 
@@ -56,7 +51,7 @@ Gradient Boosting (`XGBoost`) to capture non-linear relationships and interactio
   
 ## Validation Strategy:
 ### Temporal Validation: 
-Train models on NHANES 2017–March 2020 (n = 1,016) and evaluate out-of-time generalization on NHANES 2021–2023 (n = 919).  
+Train models on NHANES 2017–March 2020 (n = 1,016) and evaluate out-of-time generalization on NHANES 2021–2023 (n = 919).
 ### Pipeline Testing: 
 Automated `pytest` unit tests verifying zero participant leakage (`SEQN` disjointness), valid physiological/questionnaire value ranges, and proper handling of missingness and survey weights.  
 ### Metrics: 
