@@ -22,16 +22,16 @@ Discordant (Surgery + NO Gallstones):   509 (26.3%)
 * Predictors: Demographics (age, sex, race/ethnicity), socioeconomic/access factors (education, family income-to-poverty ratio, health insurance, routine healthcare access), and clinical/metabolic measures (BMI, waist circumference, diabetes, time since surgery, and laboratory lipids/glucose where sample coverage permits).
 
 ## Research question:  
-*Among adults reporting previous gallbladder surgery, which demographic, metabolic, clinical and socioeconomic characteristics distinguish those with and without a reported history of gallstones?*
+*Remove? Among adults reporting previous gallbladder surgery, which demographic, metabolic, clinical and socioeconomic characteristics distinguish those with and without a reported history of gallstones?*
 - In US adults reporting gallbladder surgery in NHANES (2017–2023), do demographic, clinical, metabolic, and socioeconomic characteristics modeled via survey-weighted multivariable logistic regression and gradient boosting predict discordant non-reporting of gallstones better than a survey-weighted age-and-sex-only baseline?  
 
 ### Literature background:
-### Paper 1 (same data): NHANES 2017–2020 study of metabolic dysfunction-associated steatotic liver disease (MASLD) and gallstones ([PMC11704231](https://pmc.ncbi.nlm.nih.gov/articles/PMC11704231/))  
-* what they did: analyzed NHANES 2017-2020 using the self-report gallstone questionnaire and propensity score matching.
-* what they found: gallstones were more prevalent with MASLD with higher odds after matching.
-* what they left open: treated self-reported gallstones strictly as the outcome and did not examine individuals who reported gallbladder surgery yet answered "no" to gallstones.
+*Remove? Paper X (same data): NHANES 2017–2020 study of metabolic dysfunction-associated steatotic liver disease (MASLD) and gallstones ([PMC11704231](https://pmc.ncbi.nlm.nih.gov/articles/PMC11704231/))  
+what they did: analyzed NHANES 2017-2020 using the self-report gallstone questionnaire and propensity score matching.
+what they found: gallstones were more prevalent with MASLD with higher odds after matching.
+what they left open: treated self-reported gallstones strictly as the outcome and did not examine individuals who reported gallbladder surgery yet answered "no" to gallstones.*
 
-*Paper 2 (same question): NHANES 2017–March 2020 study of the triglyceride-glucose (TyG) index, gallstones, and age at first gallstone surgery ([PMC11271289](https://pmc.ncbi.nlm.nih.gov/articles/PMC11271289/))  
+### Paper 1, same data: NHANES 2017–March 2020 study of the triglyceride-glucose (TyG) index, gallstones, and age at first gallstone surgery ([PMC11271289](https://pmc.ncbi.nlm.nih.gov/articles/PMC11271289/))  
 what they did: applied logistic regression and dose-response analysis using the same NHANES gallstone and gallbladder surgery questionnaire data.
 what they found: a higher TyG index was associated with higher gallstone prevalence and earlier age at first surgery (without establishing causation).
 what they left open: they did not evaluate the reliability or discordance of the self-reported gallstone response itself.*
@@ -47,8 +47,9 @@ what they left open: they did not evaluate the reliability or discordance of the
 ### Descriptive Analysis: 
 Survey-weighted descriptive epidemiology to estimate the national prevalence of discordance and compare demographic, clinical, and socioeconomic distributions between concordant and discordant groups.  
 ### Baseline Model: 
-Multivariable Logistic Regression to establish an interpretable statistical benchmark (adjusted odds ratios, 95% CIs, and baseline ROC-AUC).  
+Survey-weighted logistic regression using age and sex only. All subsequent models must improve upon this benchmark.
 ### Machine Learning & Explainability: 
+Survey-Weighted Multivariable Logistic Regression: Primary interpretable statistical model yielding adjusted odds ratios (aORs) and 95% confidence intervals.
 Gradient Boosting (`XGBoost`) to capture non-linear relationships and interactions, paired with predictor importance and `SHAP` analysis to interpret global and individual drivers of discordance.  
   
 ## Validation Strategy:
