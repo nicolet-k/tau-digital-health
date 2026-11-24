@@ -1,4 +1,4 @@
-# Discordace Between Self-Reported Gallstone Diagnosis and Gallbladder Surgery: Analysis of NHANES 2017-2023
+# Discordance Between Self-Reported Gallstone Diagnosis and Gallbladder Surgery: Analysis of NHANES 2017-2023
 ## Team: 
 - Nicole Tesla Kreimer
 - Erna Jiraskova
@@ -9,49 +9,66 @@
 ## Dataset  
 ### Source: NHANES (open dataset)  
 ### Size:  
-Total participants (all ages):          27,493  
-Merged features (columns):              212  
-Adults (age >= 20) with valid Qs:       16,989  
-Adults reporting gallbladder surgery:   1,935  
-2017-2020 cycle:                    1,016  
-2021-2023 cycle:                    919  
-Concordant (Surgery + Gallstones):      1,426 (73.7%)  
-Discordant (Surgery + NO Gallstones):   509 (26.3%)  
+| Population | N |
+|---|---:|
+| Total participants (all ages) | 27,493 |
+| Merged variables (columns) | 212 |
+| Adults ≥20 with valid responses | 16,989 |
+| Gallbladder surgery with valid gallstone history | 1,935 |
+| 2017–2020 cycle | 1,016 |
+| 2021–2023 cycle | 919 |
+| Concordant (surgery + gallstones) | 1,426 (73.7%) |
+| Discordant (surgery + no reported gallstones) | 509 (26.3%) |
+
 ### Key Variables:
 * Outcome & Cohort: Ever had gallbladder surgery; ever told by a doctor of gallstones (Medical Conditions Questionnaire).
-* Predictors: Demographics (age, sex, race/ethnicity), socioeconomic/access factors (education, family income-to-poverty ratio, health insurance, routine healthcare access), and clinical/metabolic measures (BMI, waist circumference, diabetes, time since surgery, and laboratory lipids/glucose where sample coverage permits).
+* Candidate features: Demographics (age, sex, race/ethnicity), socioeconomic/access factors (education, family income-to-poverty ratio, health insurance, routine healthcare access), and clinical/metabolic measures (BMI, waist circumference, diabetes, time since surgery, and laboratory measurements).
 
 ## Research question:  
-Among adults reporting previous gallbladder surgery, which demographic, metabolic, clinical and socioeconomic characteristics distinguish those with and without a reported history of gallstones?*
+Among adults reporting previous gallbladder surgery in NHANES 2017-2023, which demographic, socioeconomic, metabolic, clinical, and laboratory charachteristics distinguish those with and without a self-reported history of gallstones?*
 
 ## Literature background:
 
 ### Paper 1, same data: 
-**NHANES 2017–March 2020 study of the triglyceride-glucose (TyG) index, gallstones, and age at first gallstone surgery** ([PMC11271289](https://pmc.ncbi.nlm.nih.gov/articles/PMC11271289/))  
-* What they did: applied logistic regression and dose-response analysis using the same NHANES gallstone and gallbladder surgery questionnaire data.
-* What they found: a higher TyG index was associated with higher gallstone prevalence and earlier age at first surgery (without establishing causation).
-* What they left open: they did not evaluate the reliability or discordance of the self-reported gallstone response itself.*
+**Wang et al. Relationship of triglyceride-glucose index to gallstone prevalence and age at first gallstone surgery in American adults.**
+Scientific Reports. 2024;14:16749.
+([PMC11271289](https://pmc.ncbi.nlm.nih.gov/articles/PMC11271289/))  
 
-### Paper 2, same question:
-**E3N cohort, CMAJ, menopausal hormone therapy and cholecystectomy in French women** (reliability of self-reported gallstones versus surgery) ([PMC3626807](https://pmc.ncbi.nlm.nih.gov/articles/PMC3626807/))
-* What they did: checked self-reports against documents in random samples of women.
-* What they found: agreement was about 99% for cholecystectomy but only about 67% for gallstone disease, so surgery is reported reliably and gallstones less so.
-* What they left open: this was a side check in a hormone therapy study, not an analysis of who gives discordant answers. Supporting: a Scottish study found about 99.6% agreement between self-reported cholecystectomy and hospital records.
+| Field | Summary |
+|---|---|
+| **Question** | Is the triglyceride-glucose (TyG) index associated with gallstone prevalence and age at first gallbladder surgery? |
+| **Data** | NHANES 2017–March 2020; 3,905 adults, including 421 reporting gallstones. |
+| **Method** | Multivariable logistic regression, generalized additive models, dose–response analysis and subgroup analysis. |
+| **Validation** | Sensitivity and subgroup analyses within the same dataset. No independent validation cohort. |
+| **Result** | Higher TyG was associated with gallstone prevalence (adjusted OR 1.25; 95% CI 1.04–1.51 per unit increase). |
+| **Left open** | Did not specifically characterize patients with previous gallbladder surgery according to their reported gallstone history. |
 
-**The gap our project fills:** Prior studies treat self-reported gallstone diagnosis and gallbladder surgery as aligned proxies for gallstone disease. Our project directly characterizes the discordant sub-population (gallbladder surgery without reported gallstones, representing 26.3% of surgical cases) and whether there is a difference from those with a history of gallstones, across 2017-2023.   
+### Paper 2, related\same question:
+**Alli et al. Nineteen-year trends in incidence and indications for laparoscopic cholecystectomy: the NY State experience.**
+Surgical Endoscopy. 2017;31:1651–1658. 
+(https://link.springer.com/article/10.1007/s00464-016-5154-9)
+| Field | Summary |
+|---|---|
+| **Question** | Have the frequency and indications for laparoscopic cholecystectomy changed over time? |
+| **Data** | New York SPARCS administrative database, 1995–2013; 711,406 cholecystectomies, including 637,308 laparoscopic procedures. |
+| **Method** | Retrospective analysis using ICD-9 and CPT codes; log-linear Poisson regression for temporal trends. |
+| **Validation** | Additional analysis accounting for population changes. No independent validation or confirmation against pathology or imaging. |
+| **Result** | Calculous cholecystitis decreased by 20.1%, while acalculous cholecystitis and biliary dyskinesia increased by 94.2% and 331.7%, respectively, in relative frequency per 1,000 laparoscopic procedures. |
+| **Left open** | Baseline characteristics across surgical indications were described but limited to demographic and insurance data, without formal statistical comparisons or comprehensive clinical, metabolic and laboratory characterization. Discordance between surgical and diagnostic histories was not assessed. |
+
+**The gap our project fills:** Despite extensive research on gallstone disease and management, studies comparing patients undergoing cholecystectomy with and without gallstones have largely focused on surgical indications and postoperative outcomes, with limited comprehensive patient characterization. To our knowledge, no previous NHANES study has specifically characterized patients reporting gallbladder surgery without a history of diagnosed gallstones.
   
 ## Approach:
-### Descriptive Analysis: 
-Survey-weighted descriptive epidemiology to estimate the national prevalence of discordance and compare demographic, clinical, and socioeconomic distributions between concordant and discordant groups.  
+### Descriptive Analysis 
+Descriptive epidemiology to estimate the national prevalence of discordance and compare demographic, clinical, and socioeconomic distributions between concordant and discordant groups.  
 ### Baseline Model: 
-Survey-weighted logistic regression using age and sex only. All subsequent models must improve upon this benchmark.
+Logistic regression using age and sex followed by multivariable analysis with additional features.
 ### Machine Learning & Explainability: 
-Survey-Weighted Multivariable Logistic Regression: Primary interpretable statistical model yielding adjusted odds ratios (aORs) and 95% confidence intervals.
-Gradient Boosting (`XGBoost`) to capture non-linear relationships and interactions, paired with predictor importance and `SHAP` analysis to interpret global and individual drivers of discordance.  
+Compare multivariable logistic regression with tree based classification models such as gradient boosting (`XGBoost`) to capture non-linear relationships and interactions, paired with predictor importance and `SHAP` analysis to interpret global and individual features associated with model predictions.  
   
 ## Validation Strategy:
 ### Temporal Validation: 
-Train models on NHANES 2017–March 2020 (n = 1,016) and evaluate out-of-time generalization on NHANES 2021–2023 (n = 919).
+Train models on NHANES 2017–2020 (n = 1,016) and evaluate on NHANES 2021–2023 (n = 919).
 ### Pipeline Testing: 
 Automated `pytest` unit tests verifying zero participant leakage (`SEQN` disjointness), valid physiological/questionnaire value ranges, and proper handling of missingness and survey weights.  
 ### Metrics: 
