@@ -32,13 +32,13 @@ what they found: gallstones were more prevalent with MASLD with higher odds afte
 what they left open: treated self-reported gallstones strictly as the outcome and did not examine individuals who reported gallbladder surgery yet answered "no" to gallstones.*
 
 ### Paper 1, same data: 
-NHANES 2017–March 2020 study of the triglyceride-glucose (TyG) index, gallstones, and age at first gallstone surgery ([PMC11271289](https://pmc.ncbi.nlm.nih.gov/articles/PMC11271289/))  
+**NHANES 2017–March 2020 study of the triglyceride-glucose (TyG) index, gallstones, and age at first gallstone surgery** ([PMC11271289](https://pmc.ncbi.nlm.nih.gov/articles/PMC11271289/))  
 * What they did: applied logistic regression and dose-response analysis using the same NHANES gallstone and gallbladder surgery questionnaire data.
 * What they found: a higher TyG index was associated with higher gallstone prevalence and earlier age at first surgery (without establishing causation).
 * What they left open: they did not evaluate the reliability or discordance of the self-reported gallstone response itself.*
 
 ### Paper 2, same question:
-E3N cohort, CMAJ, menopausal hormone therapy and cholecystectomy in French women. (reliability of self-reported gallstones versus surgery) https://cmaj.ca/node/32619
+**E3N cohort, CMAJ, menopausal hormone therapy and cholecystectomy in French women** (reliability of self-reported gallstones versus surgery) ([PMC3626807](https://pmc.ncbi.nlm.nih.gov/articles/PMC3626807/))
 * What they did: checked self-reports against documents in random samples of women.
 * What they found: agreement was about 99% for cholecystectomy but only about 67% for gallstone disease, so surgery is reported reliably and gallstones less so.
 * What they left open: this was a side check in a hormone therapy study, not an analysis of who gives discordant answers. Supporting: a Scottish study found about 99.6% agreement between self-reported cholecystectomy and hospital records.
