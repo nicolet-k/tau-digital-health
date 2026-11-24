@@ -44,14 +44,20 @@ what they left open: they did not evaluate the reliability or discordance of the
 **The gap our project fills:** Prior NHANES studies treat self-reported gallstone diagnosis and gallbladder surgery as aligned proxies for gallstone disease. Our project directly characterizes the discordant sub-population (gallbladder surgery without reported gallstones, representing 26.3% of surgical cases) across 2017-2023.   
   
 ## Approach:
-### Descriptive Analysis: Survey-weighted descriptive epidemiology to estimate the national prevalence of discordance and compare demographic, clinical, and socioeconomic distributions between concordant and discordant groups.  
-### Baseline Model: Multivariable Logistic Regression to establish an interpretable statistical benchmark (adjusted odds ratios, 95% CIs, and baseline ROC-AUC).  
-### Machine Learning & Explainability: Gradient Boosting (`XGBoost`) to capture non-linear relationships and interactions, paired with predictor importance and `SHAP` analysis to interpret global and individual drivers of discordance.  
+### Descriptive Analysis: 
+Survey-weighted descriptive epidemiology to estimate the national prevalence of discordance and compare demographic, clinical, and socioeconomic distributions between concordant and discordant groups.  
+### Baseline Model: 
+Multivariable Logistic Regression to establish an interpretable statistical benchmark (adjusted odds ratios, 95% CIs, and baseline ROC-AUC).  
+### Machine Learning & Explainability: 
+Gradient Boosting (`XGBoost`) to capture non-linear relationships and interactions, paired with predictor importance and `SHAP` analysis to interpret global and individual drivers of discordance.  
   
 ## Validation Strategy:
-### Temporal Validation: Train models on NHANES 2017–March 2020 (n = 1,016) and evaluate out-of-time generalization on NHANES 2021–2023 (n = 919).  
-### Pipeline Testing: Automated `pytest` unit tests verifying zero participant leakage (`SEQN` disjointness), valid physiological/questionnaire value ranges, and proper handling of missingness and survey weights.  
-### Metrics: ROC-AUC, PR-AUC, calibration plots, and subgroup performance across demographic and socioeconomic strata.  
+### Temporal Validation: 
+Train models on NHANES 2017–March 2020 (n = 1,016) and evaluate out-of-time generalization on NHANES 2021–2023 (n = 919).  
+### Pipeline Testing: 
+Automated `pytest` unit tests verifying zero participant leakage (`SEQN` disjointness), valid physiological/questionnaire value ranges, and proper handling of missingness and survey weights.  
+### Metrics: 
+ROC-AUC, PR-AUC, calibration plots, and subgroup performance across demographic and socioeconomic strata.  
     
 ## Timeline:  
 | **Week 6** | Nov 25 | Project approval; finalize NHANES 2017–2023 cohort extraction. |  
