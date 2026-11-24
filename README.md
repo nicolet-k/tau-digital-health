@@ -60,10 +60,12 @@ Automated `pytest` unit tests verifying zero participant leakage (`SEQN` disjoin
 ROC-AUC, PR-AUC, calibration plots, and subgroup performance across demographic and socioeconomic strata.  
     
 ## Timeline:  
+| Week | Date | Course Milestone | Team Deliverable |
 | :--- | :--- | :--- | :--- |
-| **Week 6** | Nov 25 | Project approval; finalize NHANES 2017–2023 cohort extraction. |  
-| **Week 7** | Dec 2 | Spec-driven development in Kiro: complete `requirements.md`. |  
-| **Week 8** | Dec 9 | Data cleaning, EDA, and complete `design.md`. |  
-| **Week 9** | Dec 16 | Finalize EDA + `tasks.md`; run survey-weighted descriptive analysis and Logistic Regression baseline. |  
-| **Week 10** | Dec 23 | Train/tune `XGBoost`, run temporal validation + `SHAP` analysis, complete LLM-assisted pipeline tests and draft results. |  
-| **Week 11** | Dec 30 | Code cleanup, reproducibility check, and **Final Submission (Moodle)**. |  
+| **Week 6** | Nov 25 | Project approval | Finalize `README.md`, verify 2017–2023 counts, add first weighted/unweighted summary table |
+| **Week 7** | Dec 2 | Requirements due | Complete `requirements.md` in Kiro; freeze cohort, missingness, and feature definitions |
+| **Week 8** | Dec 9 | Design spec due | Complete `design.md`; finalize merged analytic dataset and survey-weighted Table 1 |
+| **Week 9** | Dec 16 | EDA & task list | Complete EDA and `tasks.md`; run age/sex baseline and multivariable weighted logistic regression |
+| **Week 10** | Dec 23 | Tests & draft results | Train/tune XGBoost, run 2021–2023 temporal validation + SHAP, pass all `pytest` checks |
+| **Week 11** | Dec 30 | Final submission | Code cleanup, reproducibility check, final report, and AI-use statement on Moodle |
+| **Week 12** | Jan 6/13 | Presentations | Present findings and clinical interpretation |
