@@ -60,6 +60,7 @@ Automated `pytest` unit tests verifying zero participant leakage (`SEQN` disjoin
 ROC-AUC, PR-AUC, calibration plots, and subgroup performance across demographic and socioeconomic strata.  
     
 ## Timeline:  
+| :--- | :--- | :--- | :--- |
 | **Week 6** | Nov 25 | Project approval; finalize NHANES 2017–2023 cohort extraction. |  
 | **Week 7** | Dec 2 | Spec-driven development in Kiro: complete `requirements.md`. |  
 | **Week 8** | Dec 9 | Data cleaning, EDA, and complete `design.md`. |  
